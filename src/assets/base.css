@@ -1,31 +1,35 @@
-@import 'tailwindcss';
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-/* semantic color variables for this project */
+/* Variables de colores semánticos para este proyecto */
 :root {
-  /* --color-background: red;
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
+  /* Colores principales */
+  --color-primary: #3b82f6; /* Azul */
+  --color-secondary: #64748b; /* Gris azulado */
+  --color-success: #10b981; /* Verde */
+  --color-warning: #f59e0b; /* Amarillo ámbar */
+  --color-danger: #ef4444; /* Rojo */
+  --color-accent: #8b5cf6; /* Púrpura */
 
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
+  /* Variantes de color para estado claro */
+  --color-background: #ffffff;
+  --color-surface: #f9fafb;
+  --color-border: #e5e7eb;
+  --color-text: #1f2937;
+  --color-text-light: #6b7280;
 
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
-
-  --section-gap: 160px; */
+  --section-gap: 2rem;
 }
 
+/* Variantes para modo oscuro */
 @media (prefers-color-scheme: dark) {
   :root {
-    /* --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
-
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
-
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2); */
+    --color-background: #111827;
+    --color-surface: #1f2937;
+    --color-border: #374151;
+    --color-text: #f9fafb;
+    --color-text-light: #d1d5db;
   }
 }
 
