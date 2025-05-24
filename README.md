@@ -10,6 +10,7 @@ Lamentablemente los sismos son impredecibles, pero siempre podemos estar prepara
 Debe ser una mochila pequeña o mediana que solo contenga cosas necesarias para que **tú y tu familia puedna sobrevivir y mantenerse seguros durante las siguientes 72 horas después de un desastre natural**. **La mochila siempre debe estar al alcance de todos.**
 
 Los objetivos de esta **Mochila** son:
+
 - **Autosuficiencia inmediata:** Proporcionar lo necesario para subsistir sin depender de la ayuda externa, que puede tardar en llegar.
 - **Facilitar la evacuación:** Ser fácil de transportar si es necesario salir rápidamente de casa.
 - **Mantener la comunicación e información:** Permitir acceso a noticias y la posibilidad de pedir ayuda.
@@ -33,7 +34,6 @@ Aunque el contenido puede variar según las necesidades de cada familia (bebés,
 - **Llaves:** Duplicados de llaves de casa y automóvil.
 Manta térmica o cobija ligera.
 
-
 ## Relacionado
 
 Aquí hay algunos artículos y documentos que te pueden ser de ayuda.
@@ -41,16 +41,12 @@ Aquí hay algunos artículos y documentos que te pueden ser de ayuda.
 - [Acerca de los Sismos (Protección Civil)](http://www.proteccioncivil.gob.mx/work/models/ProteccionCivil/Resource/377/1/images/folleto_s.pdf)
 - [Información de Protección Civil sobre huracanes](https://www.imss.gob.mx/patricia/proteccion-civil)
 
-
 ## Authors
 
 - [@MauroNavaLuevanos](https://github.com/MauroNavaLuevanos)
-
 
 ## Contribuciones
 
 Estamos abierto a contribuciones voluntarias a este proyecto.
 
 Pronto daremos a conocer como enviar tus contribuciones.
-
-
