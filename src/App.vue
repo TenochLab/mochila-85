@@ -143,9 +143,9 @@ body {
 }
 
 /* Estilo para botones principales */
-.btn-primary {
+/* .btn-primary {
   @apply bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors;
-}
+} */
 
 /* Altura mínima para contenido principal (considera la barra inferior) */
 main {

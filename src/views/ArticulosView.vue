@@ -124,19 +124,22 @@ const eliminarArticulo = async (item: Item) => {
 };
 
 // Guardar artículo (nuevo o editado)
-const guardarArticulo = async (item: Item) => {
+const guardarArticulo = async (item: Partial<Item>) => {
+  if (!item) return;
+
   cargando.value = true;
   try {
     if (articuloSeleccionado.value) {
       // Actualizar artículo existente
-      const articuloActualizado = await itemService.update(item);
-      const index = articulos.value.findIndex(i => i.id === item.id);
+      const itemToUpdate = { ...articuloSeleccionado.value, ...item };
+      const articuloActualizado = await itemService.update(itemToUpdate);
+      const index = articulos.value.findIndex(i => i.id === itemToUpdate.id);
       if (index !== -1) {
         articulos.value[index] = articuloActualizado;
       }
     } else {
       // Crear nuevo artículo
-      const nuevoArticulo = await itemService.create(item);
+      const nuevoArticulo = await itemService.create(item as Item);
       articulos.value.push(nuevoArticulo);
     }
 
@@ -147,6 +150,13 @@ const guardarArticulo = async (item: Item) => {
   } finally {
     cargando.value = false;
   }
+};
+
+// Guardar artículo desde el formulario
+const guardarArticuloFromForm = async (formData: Partial<Item>) => {
+  if (!formData) return;
+
+  await guardarArticulo(formData);
 };
 
 // Cerrar formulario
@@ -351,7 +361,7 @@ const limpiarFiltros = () => {
     <!-- Modal de formulario -->
     <div v-if="mostrarFormulario">
       <ItemForm
-        v-model="articuloSeleccionado || {
+        :model-value="articuloSeleccionado || {
           nombre: '',
           categoria: filtros.categoria || '',
           cantidad: 1,
@@ -363,7 +373,7 @@ const limpiarFiltros = () => {
         :categorias="categorias"
         :modoEdicion="!!articuloSeleccionado"
         v-model:visible="mostrarFormulario"
-        @guardar="guardarArticulo"
+        @guardar="guardarArticuloFromForm"
         @cancelar="cerrarFormulario"
       />
     </div>

@@ -4,7 +4,7 @@
  */
 
 import { v4 as uuidv4 } from 'uuid'
-import { BaseDBService } from './database.service'
+import { BaseDBService, getDB } from './database.service'
 import { categoriaService } from './categoria.service'
 import type { Item } from '../types/models'
 
@@ -73,6 +73,7 @@ class ItemService extends BaseDBService<Item> {
    */
   async getItemsPorCategoria(categoriaId: string): Promise<Item[]> {
     return new Promise((resolve, reject) => {
+      const db = getDB()
       if (!db) {
         reject(new Error('Base de datos no inicializada'))
         return
@@ -99,6 +100,7 @@ class ItemService extends BaseDBService<Item> {
    */
   async getItemsPorMochila(mochilaId: string): Promise<Item[]> {
     return new Promise((resolve, reject) => {
+      const db = getDB()
       if (!db) {
         reject(new Error('Base de datos no inicializada'))
         return

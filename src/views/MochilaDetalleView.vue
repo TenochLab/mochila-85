@@ -66,13 +66,6 @@ const formatearFecha = (fecha: Date | undefined) => {
   });
 };
 
-// Cargar mochila al montar o cambiar ID
-watch(() => mochilaId.value, async (newId) => {
-  if (newId) {
-    await cargarMochila(newId);
-  }
-}, { immediate: true });
-
 // Cargar mochila desde el store
 const cargarMochila = async (id: string) => {
   cargando.value = true;
@@ -101,6 +94,13 @@ const cargarMochila = async (id: string) => {
     cargando.value = false;
   }
 };
+
+// Cargar mochila al montar o cambiar ID
+watch(() => mochilaId.value, async (newId) => {
+  if (newId) {
+    await cargarMochila(newId);
+  }
+}, { immediate: true });
 
 // Marcar mochila como revisada
 const marcarComoRevisada = async () => {

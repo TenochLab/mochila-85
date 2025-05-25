@@ -17,6 +17,9 @@ export const dbReady = ref(false)
 // Instancia de la base de datos
 let db: IDBDatabase | null = null
 
+// Función para obtener la instancia de la base de datos
+export const getDB = (): IDBDatabase | null => db
+
 /**
  * Inicializa la base de datos IndexedDB
  * Crea los object stores y los índices necesarios si no existen

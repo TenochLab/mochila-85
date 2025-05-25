@@ -15,9 +15,8 @@ const props = defineProps<{
 
 // Eventos
 const emit = defineEmits<{
-  (e: 'update:modelValue', value: Partial<Item>): void;
   (e: 'update:visible', value: boolean): void;
-  (e: 'guardar'): void;
+  (e: 'guardar', data: Partial<Item>): void;
   (e: 'cancelar'): void;
 }>();
 
@@ -28,11 +27,6 @@ const error = ref<string | null>(null);
 // Actualizar formulario cuando cambia el modelo
 watch(() => props.modelValue, (newValue) => {
   form.value = { ...newValue };
-}, { deep: true });
-
-// Actualizar modelo cuando cambia el formulario
-watch(form, (newValue) => {
-  emit('update:modelValue', { ...newValue });
 }, { deep: true });
 
 // Título del formulario
@@ -86,8 +80,8 @@ const enviarFormulario = () => {
     return;
   }
 
-  // Emitir evento de guardar
-  emit('guardar');
+  // Emitir evento de guardar con los datos del formulario
+  emit('guardar', form.value);
 };
 
 // Inicializar al montar
@@ -110,7 +104,7 @@ onMounted(() => {
 
 <template>
   <div v-if="visible" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-    <div class="bg-surface rounded-lg shadow-xl w-full max-w-md">
+    <div class="bg-white rounded-lg shadow-xl w-full max-w-md">
       <div class="border-b border-border p-4">
         <h2 class="text-lg font-medium">{{ titulo }}</h2>
       </div>
